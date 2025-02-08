@@ -23,9 +23,17 @@ DOTS_DIR="$HOME/.dots"
 GITHUB_USER="mithcs"
 declare -A REPOS=(
     ["nvim-config"]="nvim"
+    ["awesomewm-config"]="awesome"
+    ["rofi-config"]="rofi"
+    ["st"]="st"
+    ["scripts"]="scripts"
 )
 declare -A SYMLINKS=(
     ["$DOTS_DIR/nvim"]="$HOME/.config/nvim"
+    ["$DOTS_DIR/awesome"]="$HOME/.config/awesome"
+    ["$DOTS_DIR/rofi"]="$HOME/.config/rofi"
+    ["$DOTS_DIR/st"]="$HOME/.config/st"
+    ["$DOTS_DIR/scripts"]="$HOME/scripts"
 )
 
 # Create $DOTS_DIR
@@ -34,6 +42,7 @@ cd "$DOTS_DIR" || exit 1
 
 echo "Cloning repositories..."
 echo
+
 for repo in "${!REPOS[@]}"; do
     folder="${REPOS[$repo]}"
     if [ ! -d "$folder" ]; then
@@ -48,10 +57,11 @@ done
 
 echo "Creating symbolic links..."
 echo
+
 for src in "${!SYMLINKS[@]}"; do
     dest="${SYMLINKS[$src]}"
     
-    if [ -e "$dest" ] || [ -L "$dest" ]; then
+    if [[ -e "$dest"  || -L "$dest" ]]; then
         echo "Existing file found: $dest"
         echo "Choose action: (o)verwrite, (s)kip, (b)ackup"
         read -r choice
