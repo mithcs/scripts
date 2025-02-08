@@ -73,6 +73,7 @@ for src in "${!SYMLINKS[@]}"; do
         esac
         echo
     fi
+    echo
     echo "Linking $src -> $dest"
     mkdir -p "$(dirname "$dest")"
     ln -s "$src" "$dest"
