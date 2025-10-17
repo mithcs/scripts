@@ -1,5 +1,7 @@
 #!/bin/env bash
 
+# TODO: replace this with some better solution...
+
 # Dependencies check
 dependencies=("git")
 missing_deps=()

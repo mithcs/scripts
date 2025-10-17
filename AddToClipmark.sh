@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/sh
 
 # This script adds selected text to clipmark
 

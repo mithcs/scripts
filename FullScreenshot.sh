@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/sh
 
 # Directory to save screenshots
 screenshot_dir="$HOME/Pictures/Screenshots"

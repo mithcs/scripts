@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/sh
 
 # Texts directory
 books_dir="$HOME/Reading"
